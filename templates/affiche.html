@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affiche</title>
+</head>
+<body>
+<h1>
+    {% for art in articles %}
+        ================================================<br>
+        {{ art.titre }}<br/>
+        {{art.cont}}<br/>
+        {{art.category.name}}<br/>
+
+        <a href="{{url_for('delete',id=art.id)}}">  <button>del</button>   </a>
+        <a href="{{url_for('edit',id=art.id)}}">  <button>edit</button>   </a>
+        <br/>
+    {% endfor %}
+</h1>
+<a href="{{url_for('add')}}">  <button>add</button>   </a>
+
+
+
+</body>
+</html>
